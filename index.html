@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Avaneesh Oti | Cyber Security Graduate, Port Moresby</title>
+<meta name="description" content="Portfolio of Avaneesh Oti, a Bachelor of Cyber Security student at Western Pacific University. Projects, experience and a downloadable resume.">
+<meta name="theme-color" content="#0b0b0c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0b0c;--panel:#141416;--panel2:#1b1b1e;--line:#2a2a2e;--text:#ececee;--muted:#9b9ba3;--accent:#e8b923;
+--font:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font);font-size:1rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:70rem;margin:0 auto;padding:0 1.5rem}
+#progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--accent);z-index:60}
+
+header{position:sticky;top:0;z-index:50;background:rgba(11,11,12,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:4rem;gap:1rem}
+.logo{font-weight:700;text-decoration:none;letter-spacing:.01em;white-space:nowrap}
+.logo i{color:var(--accent);font-style:normal}
+nav{display:flex;gap:1.6rem;font-size:.9rem;font-weight:500}
+nav a{text-decoration:none;color:var(--muted);padding:.3rem 0;border-bottom:2px solid transparent;transition:color .2s}
+nav a:hover,nav a.on{color:var(--text);border-color:var(--accent)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font:600 .92rem var(--font);padding:.7rem 1.2rem;border-radius:6px;text-decoration:none;border:1px solid var(--line);color:var(--text);background:transparent;cursor:pointer;transition:.2s}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#111}
+.btn.primary:hover{background:#f3ca3b;color:#111}
+.btn.sm{padding:.5rem .95rem;font-size:.85rem}
+.btn svg{width:1em;height:1em}
+
+.hero{padding:5rem 0 4rem}
+.hero .grid{display:grid;grid-template-columns:1.35fr 1fr;gap:4rem;align-items:center}
+.eyebrow{font-size:.8rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 1rem}
+h1{font-size:clamp(2.8rem,7vw,5rem);line-height:1.02;font-weight:800;letter-spacing:-.03em;margin:0 0 1rem}
+.title{font-size:1.25rem;color:var(--muted);margin:0 0 1.4rem;font-weight:500}
+.lede{font-size:1.1rem;color:#c6c6cc;max-width:36rem;margin:0 0 2rem}
+.btns{display:flex;gap:.75rem;flex-wrap:wrap}
+.photo{position:relative;justify-self:end;width:100%;max-width:23rem}
+.photo img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 22%;border-radius:10px;border:1px solid var(--line)}
+.photo::after{content:"";position:absolute;left:-14px;bottom:-14px;width:45%;height:45%;border-left:2px solid var(--accent);border-bottom:2px solid var(--accent);border-radius:0 0 0 10px;pointer-events:none}
+
+.stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--panel)}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.stats .wrap>div{padding:1.5rem 1.2rem;border-right:1px solid var(--line)}
+.stats .wrap>div:first-child{padding-left:0}.stats .wrap>div:last-child{border:0}
+.stats b{display:block;font-size:1.7rem;font-weight:700;line-height:1.2}
+.stats span{font-size:.9rem;color:var(--muted)}
+
+section{padding:5rem 0}
+.sec-h{margin-bottom:2.2rem}
+.sec-h p{margin:0 0 .4rem;font-size:.8rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+h2{font-size:2.1rem;font-weight:700;letter-spacing:-.02em;line-height:1.15;margin:0}
+h3{font-size:1.1rem;font-weight:600;line-height:1.35;margin:0 0 .3rem}
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:3.5rem}
+.about p{margin:0 0 1rem;color:#c6c6cc}
+.facts{list-style:none;margin:0;padding:0;background:var(--panel);border:1px solid var(--line);border-radius:10px}
+.facts li{padding:1rem 1.3rem;border-bottom:1px solid var(--line)}.facts li:last-child{border:0}
+.facts b{display:block;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+
+.filters{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.6rem}
+.filters button{font:500 .88rem var(--font);color:var(--muted);padding:.45rem 1rem;border-radius:99px;border:1px solid var(--line);background:transparent;cursor:pointer;transition:.2s}
+.filters button:hover{color:var(--text);border-color:#444}
+.filters button[aria-pressed=true]{background:var(--text);color:#111;border-color:var(--text)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:1.5rem;transition:transform .25s,border-color .25s}
+.card:hover{transform:translateY(-4px);border-color:var(--accent)}
+.card.hide{display:none}
+.card p{margin:0 0 .6rem;color:#c0c0c7;font-size:.97rem}
+.card .tags{font-size:.74rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.links{display:flex;gap:1.2rem;margin:1rem 0 0!important}
+.links a{font-size:.88rem;font-weight:600;color:var(--accent);text-decoration:none}
+.links a:hover{text-decoration:underline}
+
+.alt{background:var(--panel)}
+.tl{border-left:1px solid var(--line);margin-left:.4rem}
+.tl article{position:relative;padding:0 0 2.2rem 2rem}.tl article:last-child{padding-bottom:0}
+.tl article::before{content:"";position:absolute;left:-5px;top:.6rem;width:9px;height:9px;border-radius:50%;background:var(--accent)}
+.tl .m{color:var(--muted);font-size:.92rem;margin:0 0 .6rem}
+.tl ul{margin:0;padding-left:1.1rem;max-width:64ch;color:#c6c6cc}.tl li{margin-bottom:.3rem}
+.tl li::marker{color:var(--accent)}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem}
+.ed{padding-bottom:1.5rem;margin-bottom:1.5rem;border-bottom:1px solid var(--line)}.ed:last-child{border:0;margin:0;padding:0}
+.ed p{margin:0;color:#c6c6cc}.ed .m2{color:var(--muted);font-size:.92rem;margin-bottom:.4rem}
+.skills{display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-content:start}
+.skills div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:1.2rem}
+.skills p{margin:0;color:#c0c0c7;font-size:.95rem}
+
+.dl{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;max-width:44rem}
+.dl a{display:flex;flex-direction:column;gap:.3rem;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:1.4rem;text-decoration:none;transition:.2s}
+.dl a:hover{border-color:var(--accent);transform:translateY(-3px)}
+.dl b{font-size:1.05rem}.dl span{color:var(--muted);font-size:.9rem}.dl em{font-style:normal;color:var(--accent);font-weight:600;font-size:.88rem;margin-top:.5rem}
+
+.contact{text-align:center}
+.contact .big{font-size:clamp(1.5rem,4.5vw,2.8rem);font-weight:700;letter-spacing:-.02em;text-decoration:none;word-break:break-word;border-bottom:2px solid var(--accent)}
+.contact ul{list-style:none;padding:0;margin:2rem 0 0;display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+footer{border-top:1px solid var(--line);padding:1.5rem 0;color:var(--muted);font-size:.9rem}
+#top-btn{position:fixed;right:1.2rem;bottom:1.2rem;width:2.8rem;height:2.8rem;border-radius:50%;border:1px solid var(--line);background:var(--panel2);color:var(--text);font-size:1.1rem;cursor:pointer;opacity:0;pointer-events:none;transition:.25s}
+#top-btn.show{opacity:1;pointer-events:auto}#top-btn:hover{border-color:var(--accent);color:var(--accent)}
+@media(prefers-reduced-motion:no-preference){.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}.reveal.in{opacity:1;transform:none}}
+@media(max-width:56rem){
+ header .btn{display:none}nav{gap:1rem;font-size:.82rem;margin:0 auto}.logo{display:none}
+ .hero{padding:2.5rem 0 3rem}.hero .grid,.about,.two,.dl{grid-template-columns:1fr}
+ .photo{justify-self:start;max-width:17rem;order:-1}
+ .cards,.skills{grid-template-columns:1fr}
+ .stats .wrap{grid-template-columns:1fr 1fr}.stats .wrap>div{border-bottom:1px solid var(--line)}.stats .wrap>div:nth-child(2){border-right:0}.stats .wrap>div:first-child{padding-left:1.2rem}.stats .wrap>div:nth-child(n+3){border-bottom:0}
+ section{padding:3.5rem 0}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<header><div class="wrap">
+  <a class="logo" href="#top">Avaneesh Oti<i>.</i></a>
+  <nav aria-label="Sections"><a href="#about">About</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#contact">Contact</a></nav>
+  <a class="btn primary sm" href="assets/Avaneesh-Oti-Resume.pdf" download>Download resume</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap grid">
+  <div>
+    <p class="eyebrow">Port Moresby, Papua New Guinea</p>
+    <h1>Avaneesh Oti</h1>
+    <p class="title">Cyber Security graduate · Graduating April 2027</p>
+    <p class="lede">I turn messy data and everyday problems into tools people can use, from budgeting student events to building web apps that work offline.</p>
+    <div class="btns">
+      <a class="btn primary" href="assets/Avaneesh-Oti-Resume.pdf" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+        Download resume</a>
+      <a class="btn" href="#projects">View projects</a>
+      <a class="btn" href="https://wa.me/67581635490">WhatsApp me</a>
+    </div>
+  </div>
+  <div class="photo"><img src="assets/profile.jpg" alt="Portrait of Avaneesh Oti" width="900" height="900"></div>
+</div></div>
+<div class="stats"><div class="wrap">
+  <div><b>2027</b><span>BSc Cyber Security</span></div>
+  <div><b>2</b><span>Internships: PSNA, DHERST</span></div>
+  <div><b>2023–26</b><span>TESAS scholar</span></div>
+  <div><b>2026</b><span>SRC Treasurer, WPU</span></div>
+</div></div>
+
+<section id="about"><div class="wrap">
+  <div class="sec-h reveal"><p>About</p><h2>Practical, organised and quick to learn</h2></div>
+  <div class="about reveal">
+    <div>
+      <p>I'm finishing a Bachelor of Science in Cyber Security at Western Pacific University and graduate in April 2027. I'm the 2026 Treasurer of the Student Representative Council and a TESAS scholar.</p>
+      <p>My work sits where data, software and people meet: cleaning inventory spreadsheets, writing C# and C++ applications, building small web tools, and organising events for students and school leavers.</p>
+      <p>I'm looking for an entry-level or graduate role where I can apply these skills and keep learning.</p>
+    </div>
+    <ul class="facts">
+      <li><b>Based in</b>Port Moresby, PNG</li>
+      <li><b>Studying</b>Western Pacific University</li>
+      <li><b>Strengths</b>Excel, C#, C++, HTML/CSS/JS</li>
+      <li><b>Language</b>English, professional proficiency</li>
+    </ul>
+  </div>
+</div></section>
+
+<section id="projects" class="alt"><div class="wrap">
+  <div class="sec-h reveal"><p>Projects</p><h2>Things I've built</h2></div>
+  <div class="filters" role="group" aria-label="Filter projects">
+    <button aria-pressed="true" data-f="all">All</button>
+    <button aria-pressed="false" data-f="pwa">Offline apps</button>
+    <button aria-pressed="false" data-f="web">Web</button>
+    <button aria-pressed="false" data-f="app">Apps and coursework</button>
+  </div>
+  <div class="cards">
+      <article class="card reveal" data-cat="web">
+        <p class="tags">Web app · Cyber awareness</p>
+        <h3>Scam Reporter</h3>
+        <p>A web app that lets people in Papua New Guinea report scams so patterns can be spotted and shared.</p>
+        
+      </article>
+      <article class="card reveal" data-cat="pwa">
+        <p class="tags">PWA · Public service</p>
+        <h3>SevisBirth</h3>
+        <p>A progressive web app created to digitise the birth recording system in Papua New Guinea.</p>
+        
+      </article>
+      <article class="card reveal" data-cat="pwa">
+        <p class="tags">Web app · PWA</p>
+        <h3>Doorly</h3>
+        <p>An ID check-in and check-out attendance app, being shaped so schools and other groups can run their own attendance.</p>
+        <p class="links"><a href="https://avanstechworld.github.io/Doorly/">Live site</a><a href="https://github.com/AvansTechWorld/Doorly">Source code</a></p>
+      </article>
+      <article class="card reveal" data-cat="pwa">
+        <p class="tags">PWA · Offline</p>
+        <h3>SME Tracker</h3>
+        <p>An offline app for a small shop: stock, sales, customer debt (dinau) and cash. All data stays on the device.</p>
+        <p class="links"><a href="https://avanstechworld.github.io/SME/">Live site</a><a href="https://github.com/AvansTechWorld/SME">Source code</a></p>
+      </article>
+      <article class="card reveal" data-cat="web">
+        <p class="tags">HTML · CSS · JavaScript</p>
+        <h3>OTI Architects website</h3>
+        <p>A static multi-page website for an architecture practice, with pages for projects, team, about and contact.</p>
+        <p class="links"><a href="https://github.com/AvansTechWorld/otiarchitects">Source code</a></p>
+      </article>
+      <article class="card reveal" data-cat="pwa">
+        <p class="tags">React · Vite · IndexedDB</p>
+        <h3>Pine</h3>
+        <p>A minimalist offline-first workout app: see today's workout, log your sets, close it.</p>
+        <p class="links"><a href="https://github.com/AvansTechWorld/Pine_Source">Source code</a></p>
+      </article>
+      <article class="card reveal" data-cat="pwa">
+        <p class="tags">PWA · JavaScript</p>
+        <h3>Strength Training PWA</h3>
+        <p>A strength-training tracker that installs like an app, with a rest timer, history and a bodyweight chart.</p>
+        <p class="links"><a href="https://github.com/AvansTechWorld/Tanking">Source code</a></p>
+      </article>
+      <article class="card reveal" data-cat="app">
+        <p class="tags">Android · Encryption</p>
+        <h3>NoteKeep</h3>
+        <p>An encrypted note-taking app for Android that keeps notes private on the device.</p>
+        
+      </article>
+      <article class="card reveal" data-cat="app">
+        <p class="tags">C# · C++ · Visual Studio</p>
+        <h3>Coursework applications</h3>
+        <p>C# console and Windows Forms programs plus C++ console applications, applying object-oriented principles.</p>
+        
+      </article>
+  </div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+  <div class="sec-h reveal"><p>Experience</p><h2>Leadership and work</h2></div>
+  <div class="tl">
+    <article class="reveal"><h3>Treasurer, Student Representative Council, WPU</h3><p class="m">2026</p><ul><li>Plan and manage budgets for student events, working with university staff.</li><li>Account for event spending and coordinate logistics with fellow council members.</li></ul></article>
+    <article class="reveal"><h3>IT Department Intern, PSNA</h3><p class="m">Port Moresby · Nov 2025 – Jan 2026</p><ul><li>Restructured disorganised inventory data into clear Excel spreadsheets, adding drop-down lists to speed up sorting and categorising.</li><li>Prepared client quotations and designed promotional brochures for the department.</li></ul></article>
+    <article class="reveal"><h3>Regional Initiatives Wing Intern, DHERST</h3><p class="m">Port Moresby · Nov 2024 – Jan 2025</p><ul><li>Wrote scripts and helped organise outreach events promoting higher education pathways.</li><li>Visited schools to speak directly with prospective students and institutional stakeholders.</li></ul></article>
+    <article class="reveal"><h3>Executive Committee Member, Clean Gen WPU Initiative</h3><p class="m">2025</p><ul><li>Worked with WPU and Clean Gen to plan and run campus sustainability events, coordinating tasks and speaking to audiences.</li></ul></article>
+  </div>
+</div></section>
+
+<section id="education" class="alt"><div class="wrap">
+  <div class="sec-h reveal"><p>Education and skills</p><h2>Background</h2></div>
+  <div class="two reveal">
+    <div>
+      <div class="ed"><h3>Bachelor of Science in Cyber Security</h3><p class="m2">Western Pacific University, Ialibu · Expected April 2027</p><p>TESAS scholar (HECAS-funded), 2023–2026. Computer Systems Architecture, Network Operations, Advanced Mathematics.</p></div>
+      <div class="ed"><h3>Certificate in Higher Education</h3><p class="m2">Western Pacific University, Ialibu · Graduated April 2024</p></div>
+      <div class="ed"><h3>Certifications</h3><p>IT Essentials and CCNA: Introduction to Networks (Netacad) · Excel Data Manipulation (POMIS) · Code Camp (POMIS)</p></div>
+    </div>
+    <div class="skills">
+      <div><h3>Data and reporting</h3><p>Excel cleaning, filtering, drop-down lists and reports.</p></div>
+      <div><h3>Development</h3><p>C#, C++, HTML, CSS, JavaScript.</p></div>
+      <div><h3>Tools</h3><p>Microsoft 365, Visual Studio, VS Code, Notepad++.</p></div>
+      <div><h3>People</h3><p>Public speaking, event organising, stakeholder engagement.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="resume"><div class="wrap">
+  <div class="sec-h reveal"><p>Resume</p><h2>Take it with you</h2></div>
+  <div class="dl reveal">
+    <a href="assets/Avaneesh-Oti-Resume.pdf" download><b>Resume (PDF)</b><span>Best for reading, printing and sharing.</span><em>Download PDF</em></a>
+    <a href="assets/Avaneesh-Oti-Resume.docx" download><b>Resume (Word)</b><span>Editable copy for applications.</span><em>Download DOCX</em></a>
+  </div>
+</div></section>
+
+<section id="contact" class="alt contact"><div class="wrap reveal">
+  <div class="sec-h"><p>Contact</p><h2>Let's talk</h2></div>
+  <a class="big" href="mailto:avaneeshoti@gmail.com">avaneeshoti@gmail.com</a>
+  <ul>
+    <li><a class="btn" href="https://wa.me/67581635490">WhatsApp +675 8163 5490</a></li>
+    <li><a class="btn" href="tel:+67581635490">Call</a></li>
+    <li><a class="btn" href="https://linkedin.com/in/avaneesh-oti">LinkedIn</a></li>
+    <li><a class="btn" href="https://github.com/AvansTechWorld">GitHub</a></li>
+  </ul>
+</div></section>
+</main>
+<footer><div class="wrap">© <span id="y">2026</span> Avaneesh Oti · Port Moresby, Papua New Guinea</div></footer>
+<button id="top-btn" aria-label="Back to top">↑</button>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const bar=document.getElementById('progress'),tb=document.getElementById('top-btn');
+addEventListener('scroll',()=>{const h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';tb.classList.toggle('show',h.scrollTop>600)},{passive:true});
+tb.onclick=()=>scrollTo({top:0,behavior:reduce?'auto':'smooth'});
+const links=[...document.querySelectorAll('nav a')];
+const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+document.querySelectorAll('main section').forEach(s=>so.observe(s));
+document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.filters button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  document.querySelectorAll('.card').forEach(c=>c.classList.toggle('hide',b.dataset.f!=='all'&&c.dataset.cat!==b.dataset.f));
+});
+</script>
+</body>
+</html>
