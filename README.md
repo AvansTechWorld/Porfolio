@@ -17,6 +17,6 @@ Then open **Settings → Pages**, set **Source** to `Deploy from a branch`, choo
 
 ## Updating
 
-- Resume downloads: replace `assets/Avaneesh-Oti-Resume.pdf` and `assets/Avaneesh-Oti-Resume.docx` (keep the same file names).
+- Resume download: replace `assets/Avaneesh-Oti-Resume.pdf` (keep the same file name). Only the PDF is published, so there is no editable copy online.
 - Photo: replace `assets/profile.jpg`.
 - Add repo links to Scam Reporter, SevisBirth and NoteKeep in `index.html` if they are public.
